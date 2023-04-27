@@ -1,15 +1,16 @@
 <template>
-  <div>hi</div>
-  <shanzhu/>
+  <div>导航栏|
+  <router-link to='/'>shanzhu</router-link>|
+  <router-link to="/xxx">shanzhu2</router-link>
+  </div>
+
+  <hr/>
+  <router-view/>
 </template>
 
 <script>
-import shanzhu from './components/shanzhu.vue'
 
 export default {
   name: 'App',
-  components: {
-    shanzhu
-  }
 }
 </script>
