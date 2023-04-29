@@ -1,5 +1,5 @@
 <template>
     <div>
-        我的第一个组件
+        Switch文档
     </div>
 </template>
