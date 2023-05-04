@@ -22,14 +22,14 @@
         </li>
         <li>
           <svg class="icon">
-            <use xlink:href="#icon-ts"></use>
+            <use xlink:href="#icon-Ts"></use>
           </svg>
           <h3>基于 TypeScript</h3>
           <p>源代码采用 TypeScript 书写（非严格检查）</p>
         </li>
         <li>
           <svg class="icon">
-            <use xlink:href="#icon-tishi"></use>
+            <use xlink:href="#icon-prompt"></use>
           </svg>
           <h3>代码易读</h3>
           <p>每个组件的源代码都极其简洁</p>
@@ -88,11 +88,18 @@ $border-radius: 8px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background: linear-gradient(
+    145deg,
+    rgba(236, 253, 255, 1) 0%,
+    rgba(187, 227, 255, 1) 100%
+  );
+  clip-path: ellipse(75% 60% at 50% 40%);
   > h2 {
     margin: 30px 0;
   }
   @media (max-width: 500px) {
     padding-top: 50px + (2.2 * 16px);
+    padding-bottom: 16px;
   }
   > .actions {
     padding: 8px 0;
@@ -103,11 +110,10 @@ $border-radius: 8px;
       color: $font-color;
       padding: 8px 24px;
       border-radius: $border-radius;
-      transition: all .6s;
+      transition: all 0.6s;
       &:hover {
         text-decoration: none;
         opacity: 0.7;
-        
       }
     }
   }

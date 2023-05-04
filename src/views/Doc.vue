@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <Topnav toggleMenuVisible class="nav" />
+    <Topnav toggleMenuButtonVisible class="nav" />
     <div class="content">
       <aside v-if="menuVisible">
         <div>
@@ -14,7 +14,7 @@
             </li>
             <li>
               <router-link to="get-started">快速上手</router-link>
-            </li>
+            </li> 
           </ol>
 
           <h2>组件列表</h2>
@@ -56,7 +56,6 @@ export default {
 @import "../index.scss";
 $padding-spacing: 200px;
 .router-link-active {
-  color: #c66844;
   background: #0095ff;
 }
 .layout {

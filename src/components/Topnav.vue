@@ -11,7 +11,11 @@
           <router-link to="/doc">文档</router-link>
         </li>
       </ul>
-      <svg @click="toggleMenu" class="toggleAside icon">
+      <svg
+        @click="toggleMenu"
+        class="toggleAside icon"
+        v-if="toggleMenuButtonVisible"
+      >
         <use xlink:href="#icon-liebiao" />
       </svg>
     </div>
@@ -21,6 +25,12 @@
 <script lang="ts">
 import { inject, Ref } from "vue";
 export default {
+  props: {
+    toggleMenuButtonVisible: {
+      type: Boolean,
+      default: false,
+    },
+  },
   setup() {
     const menuVisible = inject<Ref<boolean>>("menuVisible");
     const toggleMenu = () => {
@@ -44,7 +54,7 @@ export default {
   position: relative;
   background: #ffffff;
   border-bottom: 1px solid #edeceb;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 6px rgba(0, 149, 255, 0.7);
   z-index: 10;
 
   > .logo {
