@@ -5,7 +5,7 @@ import { baseParse } from '@vue/compiler-core';
 
 export default {
     plugins: [md()],
-    base:'/bubbles-ui/',
+    base:'./',
     assetsDir:'assets',
     vueCustomBlockTransforms: {
         demo: (options) => {
