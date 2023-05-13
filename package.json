@@ -1,6 +1,8 @@
 {
   "name": "bubbles-ui",
   "version": "0.0.0",
+  "files": ["dist/lib/*"],
+  "main": "dist/lib/bubbles.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build"
