@@ -51,7 +51,7 @@ export default {
   width: 100%;
   justify-content: center;
   align-items: center;
-  position: relative;
+  position: fixed;
   background: #ffffff;
   border-bottom: 1px solid #edeceb;
   box-shadow: 0 1px 6px rgba(0, 149, 255, 0.7);

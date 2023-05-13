@@ -14,7 +14,7 @@
             </li>
             <li>
               <router-link to="get-started">快速上手</router-link>
-            </li> 
+            </li>
           </ol>
 
           <h2>组件列表</h2>
@@ -34,7 +34,7 @@
           </ol>
         </div>
       </aside>
-      <main>
+      <main @click="toggleMenuVisible">
         <router-view />
       </main>
     </div>
@@ -42,13 +42,30 @@
 </template>
 
 <script lang="ts">
-import { inject, Ref } from "vue";
+import { inject, onMounted, reactive, Ref, watchEffect } from "vue";
 import Topnav from "../components/Topnav.vue";
 export default {
   components: { Topnav },
   setup() {
     const menuVisible = inject<Ref<boolean>>("menuVisible");
-    return { menuVisible };
+    const data = reactive({
+      listenerPageWidthFn: () => {},
+      pageWidth: document.documentElement.clientWidth,
+    });
+    const toggleMenuVisible = () => {
+      if (data.pageWidth <= 500) {
+        menuVisible.value = false;
+      }
+    };
+    watchEffect(() => {
+      if (data.pageWidth >= 500) {
+        menuVisible.value = true;
+      }
+    });
+    onMounted(() => {
+      window.removeEventListener("resize", data.listenerPageWidthFn);
+    });
+    return { menuVisible, toggleMenuVisible };
   },
 };
 </script>
@@ -79,7 +96,7 @@ $padding-spacing: 200px;
       left: 0;
       padding-top: 85px;
       height: 100%;
-      border-right: 1px solid #edeceb ;
+      border-right: 1px solid #edeceb;
       z-index: 5;
       > div {
         display: flex;
@@ -103,6 +120,7 @@ $padding-spacing: 200px;
     > main {
       flex-grow: 1;
       padding: 16px;
+      margin-top: 44px;
       background: rgba($color: #ffffff, $alpha: 1);
       border-radius: 6px;
       overflow: auto;
@@ -115,6 +133,7 @@ $padding-spacing: 200px;
       }
       > main {
         background: $bgColor;
+        margin-top: 0px;
       }
     }
   }

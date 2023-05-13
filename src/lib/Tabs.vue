@@ -1,19 +1,19 @@
 <template>
-  <div class="bubbles-tabs" >
+  <div class="bubbles-tabs">
     <div class="bubbles-tabs-nav" ref="container">
       <div
         class="bubbles-tabs-nav-item"
         @click="select(t)"
         :ref="
           (el) => {
-            if (t===selected) selectedItem = el;
+            if (t.title === selected) selectedItem = el;
           }
         "
-        :class="{ selected: t === selected }"
+        :class="{ selected: t.title === selected ,'bubbles-tabs-nav-disabled':t.disabled}"
         v-for="(t, index) in titles"
         :key="index"
       >
-        {{ t }}
+        {{ t.title }}
       </div>
       <div class="bubbles-tabs-nav-indicator" ref="indicator"></div>
     </div>
@@ -59,11 +59,23 @@ export default {
     const current = computed(() => {
       return defaults.find((tag) => tag.props.title === props.selected);
     });
-    const select = (title: string) => {
-      context.emit("update:selected", title);
+    const select = (t: { title: string; disabled: boolean }) => {
+      if (!t.disabled) {
+        context.emit("update:selected", t.title);
+      }
     };
     const titles = defaults.map((tag) => {
-      return tag.props.title;
+      if (tag.props.disabled || tag.props.disabled === "") {
+        return {
+          title: tag.props.title,
+          disabled: true,
+        };
+      } else {
+        return {
+          title: tag.props.title,
+          disabled: false,
+        };
+      }
     });
     return {
       defaults,
@@ -72,7 +84,7 @@ export default {
       select,
       indicator,
       container,
-      selectedItem
+      selectedItem,
     };
   },
 };
@@ -97,6 +109,10 @@ $border-color: #d9d9d9;
       }
       &.selected {
         color: $blue;
+      }
+      &.bubbles-tabs-nav-disabled {
+        color: #ccc;
+        cursor: not-allowed;
       }
     }
     &-indicator {
