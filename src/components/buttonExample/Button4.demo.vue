@@ -8,7 +8,7 @@
   <Button theme="text" disabled>Disabled text</Button>
 </template>
 <script>
-import Button from "../../lib/Button.vue"
+import {Button} from "../../lib/index";
 export default {
     components:{
         Button
