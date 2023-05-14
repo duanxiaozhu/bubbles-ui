@@ -3,11 +3,11 @@
 打开终端运行下列命令：
 
 ```
-npm install bubbles-ui
+npm install bubbles-ui-zz
 ```
 或者
 ```
-yarn add bubbles-ui
+yarn add bubbles-ui-zz
 ```
 
 下一节：[开始使用](#/doc/get-started)

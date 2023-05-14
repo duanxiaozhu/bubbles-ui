@@ -4,7 +4,7 @@
 
 然后在你的项目中写入下面的代码：
 ```
-import {Button, Tabs, Tab, Switch, Dialog. openDialog} from "bubbles-ui";
+import {Button, Tabs, Tab, Switch, Dialog. openDialog} from "bubbles-ui-zz";
 ```
 就能使用该组件了。
 
@@ -15,7 +15,7 @@ import {Button, Tabs, Tab, Switch, Dialog. openDialog} from "bubbles-ui";
   <Button>按钮</Button>
 </template>
 <script>
-  import {Button, Tabs, Tab, Switch, Dialog. openDialog} from "bubbles-ui";
+  import {Button, Tabs, Tab, Switch, Dialog. openDialog} from "bubbles-ui-zz";
   export default {
     components: {Button, Tabs, Tab, Switch, Dialog. openDialog}
   }

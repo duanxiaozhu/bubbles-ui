@@ -6,7 +6,7 @@
         <h1>泡泡UI</h1>
         <h2>一个普普通通的UI框架</h2>
         <p class="actions">
-          <a href="">GitHub</a>
+          <a href="https://github.com/duanxiaozhu/bubbles-ui">GitHub</a>
           <router-link to="/doc">开始</router-link>
         </p>
       </div>
