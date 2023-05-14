@@ -45,6 +45,7 @@ export default {
 </script>
 
 <style lang="scss">
+@use "sass:math";
 $h: 22px;
 $h2: $h - 4px;
 .bubbles-switch {
@@ -52,7 +53,7 @@ $h2: $h - 4px;
   width: $h * 2;
   border: none;
   background: #bfbfbf;
-  border-radius: $h/2;
+  border-radius: math.div($h, 2);;
   position: relative;
 
   &.bubbles-switch-disabled {
@@ -71,7 +72,7 @@ $h2: $h - 4px;
     height: $h2;
     width: $h2;
     background: white;
-    border-radius: $h2/2;
+    border-radius: math.div($h, 2);;
     transition: 250ms;
   }
   &.bubbles-switch-checked {

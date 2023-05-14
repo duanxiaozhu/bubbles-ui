@@ -7,7 +7,7 @@
   <Button theme="link" disabled>Disabled link</Button>
   <Button theme="text" disabled>Disabled text</Button>
 </template>
-<script>
+<script lang="ts">
 import {Button} from "../../lib/index";
 export default {
     components:{

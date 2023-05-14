@@ -19,7 +19,7 @@
     <Button theme="text" level="danger">Danger text</Button>
   </div>
 </template>
-<script>
+<script lang="ts">
 import {Button} from "../../lib/index";
 export default {
     components:{
