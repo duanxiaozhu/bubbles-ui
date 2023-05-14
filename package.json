@@ -1,7 +1,9 @@
 {
   "name": "bubbles-ui",
   "version": "0.0.2",
-  "files": ["dist/lib/*"],
+  "files": [
+    "dist/lib/*"
+  ],
   "main": "dist/lib/bubbles.js",
   "scripts": {
     "dev": "vite",
@@ -19,7 +21,7 @@
     "rollup-plugin-esbuild": "^2.5.0",
     "rollup-plugin-scss": "^2.6.0",
     "rollup-plugin-vue": "^6.0.0-beta.10",
-    "sass": "^1.26.10",
+    "sass": "^1.62.1",
     "vite": "^1.0.0-rc.1"
   },
   "resolutions": {
